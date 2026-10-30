@@ -1,0 +1,401 @@
+/* =====================================
+   DOG FAMILY - MINI SUIZITO
+   DISEÑO DEL LANZAMIENTO
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #101010;
+    color: #ffffff;
+}
+
+/* =====================================
+   ENCABEZADO
+===================================== */
+
+.header {
+    width: 100%;
+    min-height: 90px;
+    padding: 12px 7%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #080808;
+    border-bottom: 2px solid #e92323;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.marca h2 {
+    color: #ffcc00;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.marca p {
+    color: #ffffff;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+/* =====================================
+   BANNER PRINCIPAL
+===================================== */
+
+.hero {
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.15)
+        ),
+        url('../img/banner.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-texto {
+    max-width: 650px;
+}
+
+.nuevo {
+    display: inline-block;
+    background: #e92323;
+    color: white;
+    padding: 9px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 20px #e9232360;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 85px);
+    font-weight: 800;
+    color: #ffcc00;
+    line-height: 1.1;
+    margin: 25px 0 15px;
+    text-shadow: 3px 4px 12px #000;
+}
+
+.hero p {
+    font-size: clamp(16px, 2vw, 22px);
+    color: white;
+    font-weight: 400;
+}
+
+/* =====================================
+   TITULO DE PRODUCTOS
+===================================== */
+
+.titulo {
+    text-align: center;
+    padding: 65px 15px 35px;
+}
+
+.titulo h2 {
+    font-size: clamp(25px, 4vw, 38px);
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.titulo h2::after {
+    content: "";
+    display: block;
+    width: 85px;
+    height: 4px;
+    background: #e92323;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+.titulo p {
+    color: #bbbbbb;
+    font-size: 15px;
+}
+
+/* =====================================
+   CONTENEDOR DE PRODUCTOS
+===================================== */
+
+.productos {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px 6% 80px;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* =====================================
+   TARJETAS ELEGANTES
+===================================== */
+
+.card {
+    background: #1c1c1c;
+    border-radius: 18px;
+    overflow: hidden;
+
+    border: 1px solid #333333;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    border-color: #ffcc00;
+
+    box-shadow: 0 15px 35px rgba(255,204,0,0.15);
+}
+
+/* IMAGEN DE PRODUCTOS */
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.06);
+}
+
+/* INFORMACION */
+
+.info {
+    padding: 22px;
+    text-align: center;
+}
+
+.info h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    min-height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info p {
+    color: #bdbdbd;
+    font-size: 13px;
+    line-height: 1.6;
+    min-height: 42px;
+    margin: 10px 0 15px;
+}
+
+.info span {
+    display: block;
+    color: #ffcc00;
+    font-size: 29px;
+    font-weight: 800;
+    margin-top: 12px;
+}
+
+/* =====================================
+   PIE DE PAGINA
+===================================== */
+
+footer {
+    background: #080808;
+    text-align: center;
+    padding: 35px 15px;
+    border-top: 2px solid #e92323;
+}
+
+footer h3 {
+    color: #ffcc00;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+footer p {
+    color: #cccccc;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* =====================================
+   ANIMACIONES DE ENTRADA
+===================================== */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header,
+.hero,
+.titulo,
+.card,
+footer {
+    animation: aparecer 0.8s ease both;
+}
+
+/* =====================================
+   TABLETAS
+===================================== */
+
+@media (max-width: 1050px) {
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+
+    .header {
+        min-height: 75px;
+        padding: 10px 5%;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .marca h2 {
+        font-size: 19px;
+    }
+
+    .hero {
+        min-height: 350px;
+        padding: 35px 6%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .nuevo {
+        font-size: 10px;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 15px 4% 50px;
+        gap: 13px;
+    }
+
+    .card {
+        border-radius: 13px;
+    }
+
+    .card img {
+        height: 145px;
+    }
+
+    .info {
+        padding: 13px 9px;
+    }
+
+    .info h3 {
+        font-size: 13px;
+        min-height: 48px;
+    }
+
+    .info p {
+        font-size: 11px;
+        min-height: 48px;
+    }
+
+    .info span {
+        font-size: 23px;
+    }
+
+    .titulo {
+        padding-top: 45px;
+    }
+
+    .titulo h2 {
+        font-size: 24px;
+    }
+
+}
+
+/* =====================================
+   CELULARES PEQUEÑOS
+===================================== */
+
+@media (max-width: 360px) {
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 220px;
+    }
+
+}
+.card {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ANIMACION DE LAS TARJETAS */
+
+.card {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease,
+                transform 0.6s ease;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
